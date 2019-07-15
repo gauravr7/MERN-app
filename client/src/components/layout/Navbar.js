@@ -16,13 +16,13 @@ class Navbar extends Component {
 		const authLinks = (
 			<ul className="navbar-nav ml-auto">
 				<li className="nav-item">
-					<a className="nav-link" href="" onClick={this.onLogoutClick.bind(this)}>
-						<img src={user.avatar} 
-							alt={user.name} 
+					<a className="nav-link" href="#0" onClick={this.onLogoutClick.bind(this)}>
+						<img src={user.avatar}
+							alt={user.name}
 							className='rounded-circle'
-							title='you must have an image here' 
-							style={{width: '25px', marginRight: '5px'}} />
-					Logout
+							title='you must have an image here'
+							style={{ width: '25px', marginRight: '5px' }} />
+						Logout
 					</a>
 				</li>
 			</ul>);
