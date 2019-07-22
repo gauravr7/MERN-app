@@ -31,7 +31,7 @@ class Dashboard extends Component {
                   {/* TODO: Experience and Education */}
 
                   <div style={{ marginBottom: '60px' }} />
-                  <button onClick={this.onDeleteClick.bind(this)} class="btn btn-danger">Delete My Account</button>
+                  <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger">Delete My Account</button>
                </div>
             );
          } else {
