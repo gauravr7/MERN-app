@@ -43,6 +43,66 @@ export const getPosts = () => dispatch => {
       );
 };
 
+// delete post
+export const deletePost = (id) => dispatch => {
+   axios
+      .delete(`/api/posts/${id}`)
+      .then(res =>
+         dispatch({
+            type: DELETE_POST,
+            payload: id
+         }))
+      .catch(err =>
+         dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+         })
+      );
+};
+
+// Add Like
+export const addLike = (id) => dispatch => {
+   axios
+      .post(`/api/posts/like/${id}`)
+      .then(res => dispatch(getPosts()))
+      .catch(err =>
+         dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+         })
+      );
+};
+
+// remove Like
+export const removeLike = (id) => dispatch => {
+   axios
+      .post(`/api/posts/unlike/${id}`)
+      .then(res => dispatch(getPosts()))
+      .catch(err =>
+         dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+         })
+      );
+};
+
+// get a single post
+export const getPost = (id) => dispatch => {
+   dispatch(setPostLoading());
+   axios
+      .get(`/api/posts/${id}`)
+      .then(res =>
+         dispatch({
+            type: GET_POST,
+            payload: res.data
+         }))
+      .catch(err =>
+         dispatch({
+            type: GET_POST,
+            payload: null
+         })
+      );
+};
 
 // set loading state
 export const setPostLoading = () => {
