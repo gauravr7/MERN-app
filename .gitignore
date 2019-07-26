@@ -5,6 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# add file dev keys in here to prevent it to get to git: /config/keys_dev.js
+
 # Runtime data
 pids
 *.pid
